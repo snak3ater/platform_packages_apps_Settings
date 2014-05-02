@@ -6054,6 +6054,9 @@
    <string name="build_date">SimpleAOSP build date</string>
    <string name="build_date_default">2014-01-01-0000</string>
 
+   <!-- Generic strings -->
+   <string name="font_size_sample">Sample</string>
+
     <!-- SuperSU header name - the app hides itself from launcher based on this resource name being present in com.android.settings -->
     <string name="supersu_title">SuperSU</string>
 
@@ -6086,4 +6089,5 @@
     <!-- Developer options - kill app long press back -->
     <string name="kill_app_longpress_back">Kill app back button</string>
     <string name="kill_app_longpress_back_summary">Kill the foreground app by long-pressing the back key</string>
+
 </resources>
