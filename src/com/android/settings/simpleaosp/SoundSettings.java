@@ -95,13 +95,12 @@ public class SoundSettings extends SettingsPreferenceFragment implements
                     Settings.System.VOLUME_KEYS_CONTROL_MEDIA_STREAM,
                     (Boolean) objValue ? 1 : 0);
         }
-        return true;
         if (preference == mVolumeKeyAdjustSound) {
             boolean value = (Boolean) objValue;
             Settings.System.putInt(getContentResolver(), VOLUME_KEY_ADJUST_SOUND,
                     value ? 1: 0);
-            return true;
         }
+            return true;
     }
 
     private void showDialogInner(int id) {
