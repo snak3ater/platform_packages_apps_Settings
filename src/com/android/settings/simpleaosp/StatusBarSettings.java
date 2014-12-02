@@ -22,6 +22,7 @@ import android.view.View;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
 import com.android.internal.util.simpleaosp.DeviceUtils;
+import com.android.internal.widget.LockPatternUtils;
 
 public class StatusBarSettings extends SettingsPreferenceFragment implements
         OnPreferenceChangeListener {
