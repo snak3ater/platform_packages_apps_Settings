@@ -6089,7 +6089,7 @@
     <string name="display_rotation_270_title">270 degrees</string>
 
     <!-- Sound settings -->
-    <string name="advanced_sound_title">Advanced options</string>
+    <string name="advanced_sound_title">Volume rocker settings</string>
     <string name="sound_title">Sound</string>
 
     <!-- Safe headset volume restore checkbox -->
@@ -6123,9 +6123,10 @@
     <string name="status_bar_double_tap_to_sleep_title">Double tap to sleep</string>
     <string name="status_bar_double_tap_to_sleep_summary">Double tap on the status bar to put the device to sleep</string>
 
-    <!-- Status bar brightness control -->
+     <!-- Status bar brightness control -->
     <string name="status_bar_toggle_brightness">Brightness control</string>
     <string name="status_bar_toggle_brightness_summary">Adjust brightness by sliding finger across status bar</string>
+    <string name="status_bar_toggle_info">Automatic brightness must be disabled</string>
 
     <!-- Increasing ring tone volume -->
     <string name="increasing_ring_volume_option_title">Increasing ring volume</string>

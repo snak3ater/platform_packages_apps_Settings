@@ -12,6 +12,7 @@ import android.preference.SwitchPreference;
 import android.provider.Settings;
 
 import com.android.settings.R;
+import android.provider.Settings.SettingNotFoundException;
 import android.util.Log;
 import java.util.Locale;
 import android.text.TextUtils;
@@ -36,12 +37,14 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
     private static final String STATUS_BAR_BATTERY_STYLE = "status_bar_battery_style";
     private static final String STATUS_BAR_BATTERY_STYLE_HIDDEN = "4";
     private static final String STATUS_BAR_BATTERY_STYLE_TEXT = "6";
+    private static final String STATUS_BAR_BRIGHTNESS_CONTROL = "status_bar_brightness_control";
 
     private PreferenceScreen mClockStyle;
     private ListPreference mQuickPulldown;
     private SwitchPreference mTicker;
     private ListPreference mStatusBarBattery;
     private ListPreference mStatusBarBatteryShowPercent;
+    private SwitchPreference mStatusBarBrightnessControl;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -76,14 +79,33 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
 	mClockStyle = (PreferenceScreen) prefSet.findPreference(KEY_STATUS_BAR_CLOCK);
         updateClockStyleDescription();
 
-	mQuickPulldown = (ListPreference) findPreference(PRE_QUICK_PULLDOWN);
+	// Status bar brightness control
+        mStatusBarBrightnessControl = (SwitchPreference) prefSet.findPreference(STATUS_BAR_BRIGHTNESS_CONTROL);
+        mStatusBarBrightnessControl.setChecked((Settings.System.getInt(getActivity().getApplicationContext().getContentResolver(),
+                Settings.System.STATUS_BAR_BRIGHTNESS_CONTROL, 0) == 1));
+		mStatusBarBrightnessControl.setOnPreferenceChangeListener(this);
+        try {
+            if (Settings.System.getInt(getActivity().getApplicationContext().getContentResolver(),
+                    Settings.System.SCREEN_BRIGHTNESS_MODE) == Settings.System.SCREEN_BRIGHTNESS_MODE_AUTOMATIC) {
+                mStatusBarBrightnessControl.setEnabled(false);
+                mStatusBarBrightnessControl.setSummary(R.string.status_bar_toggle_info);
+            }
+        } catch (SettingNotFoundException e) {
+        }
 
-        // Quick Pulldown
-        mQuickPulldown.setOnPreferenceChangeListener(this);
-        int statusQuickPulldown = Settings.System.getInt(getContentResolver(),
-                Settings.System.STATUS_BAR_QUICK_QS_PULLDOWN, 1);
-        mQuickPulldown.setValue(String.valueOf(statusQuickPulldown));
-        updateQuickPulldownSummary(statusQuickPulldown);
+        // don't show status bar brightnees control on tablet
+        if (Utils.isTablet(getActivity())) {
+            getPreferenceScreen().removePreference(mStatusBarBrightnessControl);
+        }
+            
+	    // Quick Pulldown
+	    mQuickPulldown = (ListPreference) findPreference(PRE_QUICK_PULLDOWN);
+            mQuickPulldown.setOnPreferenceChangeListener(this);
+            int statusQuickPulldown = Settings.System.getInt(getContentResolver(),
+                    Settings.System.STATUS_BAR_QUICK_QS_PULLDOWN, 1);
+            mQuickPulldown.setValue(String.valueOf(statusQuickPulldown));
+            updateQuickPulldownSummary(statusQuickPulldown);
+
 
 	mTicker = (SwitchPreference) prefSet.findPreference(KEY_STATUS_BAR_TICKER);
         final boolean tickerEnabled = systemUiResources.getBoolean(systemUiResources.getIdentifier(
@@ -92,6 +114,7 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
                 Settings.System.STATUS_BAR_TICKER_ENABLED, tickerEnabled ? 1 : 0) == 1);
         mTicker.setOnPreferenceChangeListener(this);
     }
+
     @Override
     public void onResume() {
         super.onResume();
@@ -101,7 +124,12 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
 	ContentResolver cr = getActivity().getContentResolver();
-	if (preference == mQuickPulldown) {
+	if (preference == mStatusBarBrightnessControl) {
+		boolean value = (Boolean) newValue;
+            Settings.System.putInt(cr,
+                    Settings.System.STATUS_BAR_BRIGHTNESS_CONTROL, value ? 1 : 0);
+            return true;
+	} else if (preference == mQuickPulldown) {
             int statusQuickPulldown = Integer.valueOf((String) newValue);
             Settings.System.putInt(getContentResolver(),
                     Settings.System.STATUS_BAR_QUICK_QS_PULLDOWN,
