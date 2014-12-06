@@ -13,6 +13,7 @@ import android.provider.Settings;
 
 import com.android.internal.widget.LockPatternUtils;
 import com.android.settings.R;
+import android.provider.Settings.SettingNotFoundException;
 import android.util.Log;
 import java.util.Locale;
 import android.text.TextUtils;
@@ -33,12 +34,14 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
     private static final String PRE_QUICK_PULLDOWN = "quick_pulldown";
     private static final String KEY_STATUS_BAR_TICKER = "status_bar_ticker_enabled";
     private static final String STATUS_BAR_SHOW_BATTERY_PERCENT = "status_bar_show_battery_percent";
+    private static final String STATUS_BAR_BRIGHTNESS_CONTROL = "status_bar_brightness_control";
 
     private PreferenceScreen mClockStyle;
-    SwitchPreference mBlockOnSecureKeyguard;
+    private SwitchPreference mBlockOnSecureKeyguard;
     private ListPreference mQuickPulldown;
     private SwitchPreference mTicker;
     private ListPreference mStatusBarBattery;
+    private SwitchPreference mStatusBarBrightnessControl;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -67,6 +70,25 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
 	mClockStyle = (PreferenceScreen) prefSet.findPreference(KEY_STATUS_BAR_CLOCK);
         updateClockStyleDescription();
 
+	// Status bar brightness control
+        mStatusBarBrightnessControl = (SwitchPreference) prefSet.findPreference(STATUS_BAR_BRIGHTNESS_CONTROL);
+        mStatusBarBrightnessControl.setChecked((Settings.System.getInt(getActivity().getApplicationContext().getContentResolver(),
+                Settings.System.STATUS_BAR_BRIGHTNESS_CONTROL, 0) == 1));
+		mStatusBarBrightnessControl.setOnPreferenceChangeListener(this);
+        try {
+            if (Settings.System.getInt(getActivity().getApplicationContext().getContentResolver(),
+                    Settings.System.SCREEN_BRIGHTNESS_MODE) == Settings.System.SCREEN_BRIGHTNESS_MODE_AUTOMATIC) {
+                mStatusBarBrightnessControl.setEnabled(false);
+                mStatusBarBrightnessControl.setSummary(R.string.status_bar_toggle_info);
+            }
+        } catch (SettingNotFoundException e) {
+        }
+
+        // don't show status bar brightnees control on tablet
+        if (Utils.isTablet(getActivity())) {
+            getPreferenceScreen().removePreference(mStatusBarBrightnessControl);
+        }
+
         final LockPatternUtils lockPatternUtils = new LockPatternUtils(getActivity());
         mBlockOnSecureKeyguard = (SwitchPreference) findPreference(PREF_BLOCK_ON_SECURE_KEYGUARD);
         if (lockPatternUtils.isSecure()) {
@@ -74,12 +96,12 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
                     Settings.Secure.STATUS_BAR_LOCKED_ON_SECURE_KEYGUARD, 1) == 1);
             mBlockOnSecureKeyguard.setOnPreferenceChangeListener(this);
         } else {
-            prefs.removePreference(mBlockOnSecureKeyguard);
+            prefSet.removePreference(mBlockOnSecureKeyguard);
         }
 
 	mQuickPulldown = (ListPreference) findPreference(PRE_QUICK_PULLDOWN);
         if (!DeviceUtils.isPhone(getActivity())) {
-            prefs.removePreference(mQuickPulldown);
+            prefSet.removePreference(mQuickPulldown);
         } else {
             // Quick Pulldown
             mQuickPulldown.setOnPreferenceChangeListener(this);
@@ -104,7 +126,13 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-        if (preference == mBlockOnSecureKeyguard) {
+	ContentResolver cr = getActivity().getContentResolver();
+	if (preference == mStatusBarBrightnessControl) {
+		boolean value = (Boolean) newValue;
+            Settings.System.putInt(cr,
+                    Settings.System.STATUS_BAR_BRIGHTNESS_CONTROL, value ? 1 : 0);
+            return true;
+	} else if (preference == mBlockOnSecureKeyguard) {
             Settings.Secure.putInt(getContentResolver(),
                     Settings.Secure.STATUS_BAR_LOCKED_ON_SECURE_KEYGUARD,
                     (Boolean) newValue ? 1 : 0);
