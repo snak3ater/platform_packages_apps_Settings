@@ -6030,7 +6030,7 @@
     <!-- Network traffic -->
     <string name="network_traffic_title">Network traffic</string>
     <string name="show_network_traffic_state">Status bar traffic monitor</string>
-    <string name="network_traffic_summary">Enable various network traffic options in statusbar</string>
+    <string name="network_traffic_summary">Enable various network traffic options in status bar</string>
     <string name="show_network_traffic_unit">Display unit</string>
     <string name="show_network_traffic_frequency">Update interval</string>
     <string name="show_network_traffic_disable">Disabled</string>
@@ -6300,8 +6300,8 @@
     <string name="development_shortcut_summary">Enable application management shortcuts in recent apps list</string>
 
     <!-- Quick settings disable on lockscreen -->
-    <string name="block_on_secure_keyguard_title">Disable on lockscreen</string>
-    <string name="block_on_secure_keyguard_summary">Disable quick settings on secure lockscreen</string>
+    <string name="block_on_secure_keyguard_title">Disable quick settings on secure lockscreen</string>
+    <string name="block_on_secure_keyguard_summary">When enabled, access to quick settings on secure lockscreen will be disabled</string>
 
     <!-- QuickSettings: Quick Pulldown -->
     <string name="title_quick_pulldown">Quick pulldown</string>
@@ -6316,7 +6316,7 @@
 
     <!-- Notification ticker -->
     <string name="status_bar_ticker_title">Notification ticker</string>
-    <string name="status_bar_ticker_summary">Notification text animation in the statusbar</string>
+    <string name="status_bar_ticker_summary">Notification text animation in the status bar</string>
 
     <!-- Show notification count -->
     <string name="status_bar_notif_count_title">Show notification count</string>
