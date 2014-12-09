@@ -44,12 +44,6 @@
             android:title="@string/status_bar_double_tap_to_sleep_title" />
     </PreferenceCategory>
 
-    <SwitchPreference
-            android:key="block_on_secure_keyguard"
-            android:title="@string/block_on_secure_keyguard_title"
-            android:summary="@string/block_on_secure_keyguard_summary"
-            android:persistent="false" />
-
     <PreferenceScreen
             android:fragment="com.android.settings.simpleaosp.StatusBarClockStyle"
             android:key="clock_style_pref"
