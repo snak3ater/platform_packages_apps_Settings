@@ -6058,6 +6058,12 @@
     <string name="empty_string">Empty</string>
     <string name="ok">OK</string>
     <string name="font_size_sample">Sample</string>
+    <string name="add">Add</string>
+    <string name="help">Help</string>
+    <string name="attention">Attention</string>
+    <string name="enabled">Enabled</string>
+    <string name="default_string">Default</string>
+    <string name="choose_app">Choose application</string>
     <string name="reset_message">Reset all entries to default?</string>
 
     <!-- Color Picker -->
