@@ -6369,4 +6369,8 @@
     <!-- Clear all recents on navbar enabler strings -->
     <string name="clear_all_recents_navbar_enabled_title">Clear all recents button on nav bar</string>
     <string name="clear_all_recents_navbar_enabled_summary">Show clear all recents button on navigation bar</string>
+
+    <!-- Weather in status bar -->
+    <string name="status_bar_show_weather_title">Show weather</string>
+    <string name="status_bar_show_weather_summary">Show the weather in the status bar header</string>
 </resources>
