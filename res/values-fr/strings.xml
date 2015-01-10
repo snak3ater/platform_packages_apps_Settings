@@ -806,7 +806,7 @@
     <string name="search_settings" msgid="1910951467596035063">"Recherche"</string>
     <string name="search_settings_summary" msgid="9205656546570654169">"Configurer les paramètres et l\'historique de recherche"</string>
     <string name="display_settings" msgid="7965901687241669598">"Affichage"</string>
-    <string name="accelerometer_title" msgid="7854608399547349157">"Rotation auto de l\'écran"</string>
+    <string name="accelerometer_title" msgid="7854608399547349157">"Rotation automatique de l\'écran"</string>
     <string name="accelerometer_summary_on" product="tablet" msgid="429982132339828942">"Changer automatiquement d\'orientation lors de la rotation de la tablette"</string>
     <string name="accelerometer_summary_on" product="default" msgid="1133737282813048021">"Changer automatiquement d\'orientation lors de la rotation du téléphone"</string>
     <string name="accelerometer_summary_off" product="tablet" msgid="4781734213242521682">"Changer automatiquement d\'orientation lors de la rotation de la tablette"</string>
@@ -2563,7 +2563,7 @@
 
     <!-- Generic strings -->
     <string name="ok_string">OK</string>
-    <string name="default_string">Défaut</string>
+    <string name="default_string">Par défaut</string>
     <string name="enabled_string">Activé</string>
     <string name="disabled_string">Désactivé</string>
     <string name="general_string">Général</string>
@@ -2581,13 +2581,13 @@
     <string name="hex">Hex:</string>
     <string name="hex_hint">#ff000000</string>
     <string name="set">Choisir</string>
-    <string name="color_default">Défaut</string>
+    <string name="color_default">Par défaut</string>
 
     <!-- Display : Rotation -->
     <string name="display_rotation_title">Rotation</string>
     <string name="display_rotation_disabled">Désactivée</string>
     <string name="display_rotation_unit">degrés</string>
-    <string name="display_rotation_category_title">Les modes de rotation</string>
+    <string name="display_rotation_category_title">Les différents modes de rotation</string>
     <string name="display_rotation_0_title">0 degré</string>
     <string name="display_rotation_90_title">90 degrés</string>
     <string name="display_rotation_180_title">180 degrés</string>
@@ -2699,8 +2699,8 @@
     <string name="recents_clear_all_location_title">Emplacement du bouton d\'effacement</string>
     <string name="recents_clear_all_location_top_right">En haut à droite</string>
     <string name="recents_clear_all_location_top_left">En haut à gauche</string>
-	<string name="recents_clear_all_location_bottom_right">En bas à droite</string>
-	<string name="recents_clear_all_location_bottom_left">En bas à gauche</string>
+    <string name="recents_clear_all_location_bottom_right">En bas à droite</string>
+    <string name="recents_clear_all_location_bottom_left">En bas à gauche</string>
 	
     <!-- per app controls for keyguard notifications -->
     <string name="app_notification_show_on_keyguard_title">Afficher sur l\'écran de verrouillage</string>
@@ -2888,6 +2888,8 @@
     <string name="screen_recorder_summary">Régler les paramètres de l\'enregistreur d\'écran</string>
     <string name="screen_recorder_video_dimensions_title">Taille de la vidéo</string>
     <string name="screen_recorder_video_bitrate_title">Débit</string>
+    <string name="power_menu_screenrecord_title">Enregistrement d\'écran</string>
+    <string name="screen_recorder_power_menu_summary">Ajouter une option enregistrement d\'écran dans le menu d\'alimentation</string>
     <!-- video sizes -->
     <string name="screen_recorder_size_240x400">240x400</string>
     <string name="screen_recorder_size_360x640">360x640</string>
@@ -2935,9 +2937,13 @@
     <string name="status_bar_show_weather_title">Afficher la météo</string>
     <string name="status_bar_show_weather_summary">Afficher la météo dans le haut de la barre de statut</string>
 	
-     <!--- Lock clock -->
+    <!--- Lock clock -->
     <string name="lock_clock_title">Widget Horloge</string>
     <string name="lock_clock_summary">Afficher ou modifier la façon dont le widget \'cLock\' s\'affiche</string>
     <string name="weather_clock_title">Météo dans la barre de statut</string>
     <string name="weather_clock_summary">Afficher ou modifier les paramètres météo dans la barre de statut</string>
+    
+    <!-- Ignore last app when clearing recents -->
+    <string name="recents_clear_all_dismiss_all_title">Effacer toutes les tâches</string>
+    <string name="recents_clear_all_dismiss_all_summary">Choisir si il faut effacer toutes les tâches ou ignorer la tâche au premier plan</string>
 </resources>
