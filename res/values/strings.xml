@@ -6425,6 +6425,16 @@
 
     <!-- Power menu -->
     <string name="power_menu_title">Power menu</string>
+    <string name="power_menu_power_title">Power off</string>
+    <string name="power_menu_reboot_title">Reboot menu</string>
+    <string name="power_menu_screenshot_title">Screenshot</string>
+    <string name="power_menu_airplane_title">Airplane mode</string>
+    <string name="power_menu_users_title">User switcher</string>
+    <string name="power_menu_settings_title">Settings shortcut</string>
+    <string name="power_menu_lockdown_title">Device lockdown</string>
+    <string name="power_menu_bug_report_title">Bug report</string>
+    <string name="power_menu_sound_title">Sound panel</string>
+    <string name="power_menu_bug_report_disabled">Bug reporting is disabled in development settings</string>
 
     <!-- QuickSettings haptic feedback -->
     <string name="quick_settings_vibrate_title">Vibrate on touch</string>
@@ -6457,4 +6467,19 @@
     <!-- Linked / unlinked notification volume -->
     <string name="link_volume_option_title">Link ringtone &amp; notification volumes</string>
     <string name="notification_volume_option_title">Notification volume</string>
+
+    <!-- QS tiles -->
+    <string name="qs_category_title">Quick Settings</string>
+    <string name="qs_order_title">Select &amp; order tiles</string>
+    <string name="add_qs">Add new tile</string>
+    <string name="cast_screen">Cast screen</string>
+    <string name="hotspot">Hotspot</string>
+    <string name="qs_action_delete">Delete</string>
+    <string name="qs_action_add">Add</string>
+    <string name="qs_action_no_more_tiles">No more tiles available</string>
+    <string name="qs_main_tiles_title">Enlarge first row</string>
+    <string name="qs_main_tiles_summary_on">Two main tiles on the first row</string>
+    <string name="qs_main_tiles_summary_off">Three tiles on each row</string>
+    <string name="qs_advanced_location_title">Advanced location quick settings</string>
+    <string name="qs_advanced_location_summary">Enable advanced settings for location in quick settings</string>
 </resources>

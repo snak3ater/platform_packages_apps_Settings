@@ -2883,12 +2883,6 @@
     <string name="heads_up_time_out_10sec">10 secondes</string>
     <string name="heads_up_time_out_never">Jamais</string>
     
-    <!-- Android debugging over WiFi -->
-    <string name="adb_over_network">ADB sur le réseau</string>
-    <string name="adb_over_network_summary">Activer le débogage TCP / IP sur les interfaces réseau (Wi-Fi, réseaux USB). Ce paramètre est réinitialisé au redémarrage</string>
-    <!-- Warning for Adb over Network -->
-    <string name="adb_over_network_warning">AVERTISSEMENT: Lorsque ADB sur le réseau est activée, votre téléphone est ouvert pour les intrusions sur tous les réseaux connectés, y compris le réseau de donnée GSM !\n\N\'utilisez cette fonction que lorsque vous êtes connecté sur les réseaux de confiance.\n\nVoulez-vous vraiment activer cette fonction ?</string>
-
     <!-- Screen recorder -->
     <string name="screen_recorder_title">Enregistreur d\'écran</string>
     <string name="screen_recorder_summary">Régler les paramètres de l\'enregistreur d\'écran</string>
@@ -2934,6 +2928,16 @@
 
     <!-- Power menu -->
     <string name="power_menu_title">Menu d\'alimentation</string>
+    <string name="power_menu_power_title">Eteindre</string>
+    <string name="power_menu_reboot_title">Menu redémarrer</string>
+    <string name="power_menu_screenshot_title">Capture d\'écran</string>
+    <string name="power_menu_airplane_title">Mode avion</string>
+    <string name="power_menu_users_title">Sélecteur d\'utilisateur</string>
+    <string name="power_menu_settings_title">Raccourci des paramètres</string>
+    <string name="power_menu_lockdown_title">Verrouillage de l\'appareil</string>
+    <string name="power_menu_bug_report_title">Rapport de Bug</string>
+    <string name="power_menu_sound_title">Panneau de son</string>
+    <string name="power_menu_bug_report_disabled">Le rapport de bug est désactivé dans les paramètres développeur</string>
 
     <!-- QuickSettings haptic feedback -->
     <string name="quick_settings_vibrate_title">Vibrer au toucher</string>
@@ -2956,4 +2960,8 @@
     <!-- QuickSettings brightness slider -->
     <string name="qs_brightness_slider_title">Afficher le curseur de luminosité</string>
     <string name="qs_brightness_slider_summary">Afficher un curseur de luminosité dans le panneau de paramètres rapide</string>
+	
+    <!-- Linked / unlinked notification volume -->
+    <string name="link_volume_option_title">Lier le volume de sonnerie et de notification</string>
+    <string name="notification_volume_option_title">Volume de notification</string>
 </resources>
