@@ -2527,8 +2527,7 @@
     <string name="status_bar_battery_style_hidden">Cacher</string>
 
     <!-- Status bar - Battery percentage -->
-    <string name="status_bar_battery_percentage_title">Afficher le pourcentage de la batterie</string>
-    <string name="status_bar_battery_percentage_dialog_title">Pourcentage de la batterie</string>
+    <string name="status_bar_battery_percentage_title">Pourcentage de la batterie</string>
     <string name="status_bar_battery_percentage_default">Ne pas afficher (Par défaut)</string>
     <string name="status_bar_battery_percentage_text_inside">Intérieur de l\'icône</string>
     <string name="status_bar_battery_percentage_text_next">A côté de l\'icône</string>
@@ -2928,8 +2927,8 @@
 
     <!-- Power menu -->
     <string name="power_menu_title">Menu d\'alimentation</string>
-    <string name="power_menu_power_title">Eteindre</string>
-    <string name="power_menu_reboot_title">Menu redémarrer</string>
+    <string name="power_menu_power_title">Éteindre</string>
+    <string name="power_menu_reboot_title">Menu de redémarrage</string>
     <string name="power_menu_screenshot_title">Capture d\'écran</string>
     <string name="power_menu_airplane_title">Mode avion</string>
     <string name="power_menu_users_title">Sélecteur d\'utilisateur</string>
@@ -2979,4 +2978,7 @@
     <string name="qs_main_tiles_summary_off">Trois tuiles sur chaque rangée</string>
     <string name="qs_advanced_location_title">Emplacement des paramètres rapides avancés</string>
     <string name="qs_advanced_location_summary">Activer les paramètres avancés pour l\'emplacement dans les paramètres rapides</string>
+    
+    <!-- Default alarm ringtone -->
+    <string name="alarm_ringtone_title">Sonnerie d\'alarme par défaut</string>
 </resources>
