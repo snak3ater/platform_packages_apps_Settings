@@ -6473,6 +6473,7 @@
     <string name="add_qs">Add new tile</string>
     <string name="cast_screen">Cast screen</string>
     <string name="hotspot">Hotspot</string>
+    <string name="notifications">Notifications</string>
     <string name="qs_action_delete">Delete</string>
     <string name="qs_action_add">Add</string>
     <string name="qs_action_no_more_tiles">No more tiles available</string>
@@ -6488,4 +6489,10 @@
 
     <!-- Default alarm ringtone -->
     <string name="alarm_ringtone_title">Default alarm ringtone</string>
+
+    <!--User preferences settings-->
+    <string name="personalization">Personalization</string>
+    <string name="reset_user_preferences_title">Reset preferences</string>
+    <string name="reset_user_preferences_summary">Restores user interface preferences to default values</string>
+    <string name="reset_user_preferences_dialog">Are you sure you want to reset your preferences?</string>
 </resources>
