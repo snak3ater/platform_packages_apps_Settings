@@ -20,7 +20,7 @@
     android:scrollbars="vertical"
     android:focusable="true"
     android:focusableInTouchMode="true"
-    android:background="@android:color/white">
+    android:background="@color/background_color_white">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -57,7 +57,7 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dip"
-                android:background="#ff404040"
+                android:background="@color/ownerinfo_divider_color"
                 />
 
             <EditText android:id="@+id/owner_info_edit_text"
