@@ -1828,6 +1828,11 @@
                 android:resource="@id/display_settings" />
         </activity>
 
+ 	<!-- Saosp Start -->
+        <activity android:name=".simpleaosp.SaospSettings" />
+
+        <!-- Saosp End -->
+
         <!-- Pseudo-activity used to provide an intent-filter entry point to encryption settings -->
         <activity android:name="Settings$CryptKeeperSettingsActivity"
                 android:label="@string/crypt_keeper_encrypt_title">
