@@ -56,27 +56,10 @@
                 android:title="@string/power_menu_expanded_desktop"
                 android:fragment="com.android.settings.applications.ExpandedDesktopPreferenceFragment" />
 
-        <SwitchPreference
-                android:key="doze"
+        <PreferenceScreen
+                android:key="doze_fragment"
                 android:title="@string/doze_title"
-                android:summary="@string/doze_summary"
-                android:persistent="false" />
-
-       <!-- Ambient display timeout -->
-       <SlimSeekBarPreference
-                android:key="doze_timeout"
-                android:title="@string/doze_timeout_title"
-                android:summary="@string/doze_timeout_summary"
-                android:dependency="doze" />
-
-       <!-- Ambient trigger motion -->
-       <SwitchPreference
-                android:key="doze_trigger_motion"
-                android:title="@string/doze_trigger_motion_title"
-                android:summaryOn="@string/doze_trigger_motion_summary_on"
-                android:summaryOff="@string/doze_trigger_motion_summary_off"
-                android:persistent="false"
-                android:dependency="doze" />
+                android:fragment="com.android.settings.simpleaosp.AmbientSettings" />
 
         <ListPreference
                 android:key="lcd_density"

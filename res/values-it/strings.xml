@@ -2862,7 +2862,6 @@
     <!-- Power menu -->
     <string name="power_menu_title">Power menu</string>
     <string name="power_menu_title_summary">Modifica le voci del power menu</string>
-    <string name="power_menu_power_title">Spegni</string>
     <string name="power_menu_reboot_title">Reboot menu</string>
     <string name="power_menu_screenshot_title">Screenshot</string>
     <string name="power_menu_airplane_title">Modalità aereo</string>
@@ -3021,10 +3020,6 @@
     <!-- Navigation bar cursor -->
     <string name="navigation_bar_arrow_keys_title">Mostra pulsanti cursore</string>
     <string name="navigation_bar_arrow_keys_summary">Mostra una freccetta in basso a destra e a sinistra per muovere il cursore quando si apre la tastiera</string>
-
-    <!-- Doze pulse (ambient display) notification timeout -->
-    <string name="doze_timeout_title">Ambient display timeout</string>
-    <string name="doze_timeout_summary">Modifica il tempo che il display resta acceso per mostrare le notifiche</string>
 
     <!-- QuickSettings collapse panel -->
     <string name="quick_settings_collapse_title">Chiudi automaticamente il pannello</string>

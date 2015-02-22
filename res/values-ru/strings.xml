@@ -2613,7 +2613,7 @@
     <string name="pref_volume_wake_title">Пробуждение устройства</string>
     <string name="pref_volume_wake_summary">Нажатие на кнопки громкости будет пробуждать устройство</string>
     <string name="wakeup_when_plugged_unplugged_title">Пробуждаться при зарядке</string>
-    <string name="wakeup_when_plugged_unplugged_summary">Устройство пробуждается, когда подкл./откл. зарядное устройство</string>
+    <string name="wakeup_when_plugged_unplugged_summary">Включать экран при подключении и отключении зарядного устройства</string>
 
     <!-- Volume adjust sound -->
     <string name="volume_key_adjust_sound_title">Звук регулировки громкости</string>
@@ -2624,11 +2624,11 @@
 
     <!-- Advanced reboot options -->
     <string name="advanced_reboot_title">Расширенная перезагрузка</string>
-    <string name="advanced_reboot_summary">Включают в себя параметры в меню питания для перезагрузки в рекавери, загрузчик или выполнение мягкой перезагрузки</string>
+    <string name="advanced_reboot_summary">Включает в себя параметры в меню питания для перезагрузки в режим восстановления, загрузчик или выполнение мягкой перезагрузки</string>
 
     <!-- Status bar double-tap to sleep -->
-    <string name="status_bar_double_tap_to_sleep_title">Двойной тап для сна</string>
-    <string name="status_bar_double_tap_to_sleep_summary">Двойной тап по строке состояния блокирует девайс</string>
+    <string name="status_bar_double_tap_to_sleep_title">Выключать экран при двойном нажатии</string>
+    <string name="status_bar_double_tap_to_sleep_summary">Дважды коснитесь строки состояния, чтобы перевести устройство в спящий режим</string>
 
     <!-- Status bar brightness control -->
     <string name="status_bar_toggle_brightness">Регулировка громкости</string>
@@ -2792,7 +2792,7 @@
 
     <!-- Volume rocker music seek options -->
     <string name="volbtn_music_controls_title">Управление воспроизведением</string>
-    <string name="volbtn_music_controls_summary">Когда экран выключен, долгое нажатие на клавиши громкости будут переключать музыкальные треки</string>
+    <string name="volbtn_music_controls_summary">Когда экран выключен, долгое нажатие на клавиши громкости будет переключать музыкальные треки</string>
     <string name="volume_button_toggle_info">Пробуждение кнопкой громсти должно быть отключено</string>
 
     <!-- Show notification count -->
@@ -2893,7 +2893,6 @@
 
     <!-- Power menu -->
     <string name="power_menu_title">Меню питания</string>
-    <string name="power_menu_power_title">Выключение</string>
     <string name="power_menu_reboot_title">Меню перезагрузки</string>
     <string name="power_menu_screenshot_title">Скриншот</string>
     <string name="power_menu_airplane_title">Режим полета</string>
@@ -2932,8 +2931,8 @@
     <!-- QS tiles -->
     <string name="notification_drawer_title">Панель уведомлений</string>
     <string name="qs_category_title">Быстрые настройки</string>
-    <string name="qs_order_title">Выберите и переместите плитки</string>
-    <string name="add_qs">Добавить новый</string>
+    <string name="qs_order_title">Выбрать и упорядочить плитки</string>
+    <string name="add_qs">Добавление плитки</string>
 
     <string name="qs_action_delete">Удалить</string>
     <string name="qs_action_add">Добавить</string>
@@ -2942,16 +2941,16 @@
     <string name="qs_main_tiles_summary_on">Две главных плитки в первом ряду</string>
     <string name="qs_main_tiles_summary_off">Три или четыре плитки в каждом ряду</string>
     <string name="qs_advanced_location_title">Расширенные настройки местоположения</string>
-    <string name="qs_advanced_location_summary">Включить дополнительные настройки местоположения</string>
+    <string name="qs_advanced_location_summary">Включить расширенные настройки для местоположения в быстрых настройках</string>
     <string name="qs_tile_wifi">Wi\u2011Fi</string>
     <string name="qs_tile_bluetooth">Bluetooth</string>
     <string name="qs_tile_display_inversion">Инверсия цветов</string>
-    <string name="qs_tile_cellular_data">Передача данных</string>
+    <string name="qs_tile_cellular_data">Мобильные данные</string>
     <string name="qs_tile_airplane_mode">Режим полета</string>
-    <string name="qs_tile_display_rotation">Ориентация</string>
+    <string name="qs_tile_display_rotation">Автоповорот</string>
     <string name="qs_tile_flashlight">Фонарик</string>
     <string name="qs_tile_location">Местоположение</string>
-    <string name="qs_tile_cast_screen">Передать изображение экрана</string>
+    <string name="qs_tile_cast_screen">Дублирование экрана</string>
     <string name="qs_tile_hotspot">Точка доступа</string>
     <string name="qs_tile_notifications">Уведомления</string>
     <string name="qs_tile_nfc">NFC</string>
@@ -2996,15 +2995,15 @@
     <string name="app_ops_no_item_text">Это приложение не имеет сменные разрешения</string>
 
     <!-- Expanded desktop -->
-    <string name="power_menu_expanded_desktop">Расширенный рабочий стол</string>
+    <string name="power_menu_expanded_desktop">Расширенный экран</string>
     <string name="expanded_hide_nothing">Ничего не скрывать</string>
     <string name="expanded_hide_status">Скрыть строку состояния</string>
     <string name="expanded_hide_navigation">Скрыть панель навигации</string>
     <string name="expanded_hide_both">Скрыть оба</string>
-    <string name="expanded_nothing_to_show">Чтобы добавить пользовательскую конфигурацию в приложение для расширенного состояния, установите \'Включено для всех\' в выключенное положение</string>
+    <string name="expanded_nothing_to_show">Для настройки параметров расширенного экрана для отдельных приложений, переведите переключатель «Включено для всех» в отключенное состояние</string>
     <string name="expanded_enabled_for_all">Включено для всех</string>
     <string name="expanded_desktop_style">Стиль расширенного экрана</string>
-    <string name="expanded_desktop_style_description">Выберите по умолчанию стиль расширенного рабочего стола</string>
+    <string name="expanded_desktop_style_description">Выбрать режим расширенного экрана по умолчанию</string>
     <string name="expanded_desktop_title">Настройки расширенного экрана</string>
 
     <!-- Status bar - Clock -->
@@ -3033,7 +3032,7 @@
     <string name="lockscreen_targets_message">Ярлыки</string>
     <string name="lockscreen_default_target">По умолчанию</string>
     <string name="lockscreen_none_target">Нету</string>
-    <string name="lockscreen_message">Нажмите на иконку, слева или справа чтобы переназначить ярлык.</string>
+    <string name="lockscreen_message">Нажмите на иконку слева или справа чтобы переназначить ярлык.</string>
     <string name="lockscreen_choose_action_title">Выберите действие</string>
     <string name="lockscreen_message_disabled">Ярлыки отключены.</string>
     <string name="lockscreen_shortcuts_enabled">Ярлыки экрана блокировки включены</string>
@@ -3062,13 +3061,6 @@
     <!-- Navigation bar cursor -->
     <string name="navigation_bar_arrow_keys_title">Отображение кнопок со стрелками</string>
     <string name="navigation_bar_arrow_keys_summary">Показывать левую и правую кнопки курсора во время набора текста. Заменяет кнопку выбора способа ввода.</string>
-
-    <!-- Doze options -->
-    <string name="doze_timeout_title">Тайм-аут запрета спящего режима</string>
-    <string name="doze_timeout_summary">Время, на которое экран остается включенным, для показа уведомления</string>
-    <string name="doze_trigger_motion_title">Триггерные датчики</string>
-    <string name="doze_trigger_motion_summary_on">Выход из спящего режима будет вызван жестом/датчиком движения и уведомлениями</string>
-    <string name="doze_trigger_motion_summary_off">Выход из спящего режима будет вызван только уведомлениями</string>
 
     <!-- QuickSettings collapse panel -->
     <string name="quick_settings_collapse_title">Автозакрытие панели</string>
@@ -3135,4 +3127,66 @@
 
     <!-- Setting switch summary when device is in Charging mode -->
     <string name="enable_adb_summary_charging">Устройство в режиме зарядки, USB отладка отключена</string>
+	
+    <!-- Doze pulse (ambient display) options -->
+    <string name="doze_overwrite_value_title">Перезаписать значение</string>
+    <string name="doze_overwrite_value_summary">Разрешить перезаписать значения по умолчанию пользовательскими настройками</string>
+
+    <string name="doze_list_mode_title">Спящий режим</string>
+    <string name="doze_list_mode_summary">Возможность настроить спящий режим</string>
+
+    <string name="doze_pulse_title">Настройки времени</string>
+    <string name="doze_pulse_duration_in_title">Появление</string>
+    <string name="doze_pulse_duration_in_summary"></string>
+
+    <string name="doze_pulse_duration_visible_title">Длительность видимости</string>
+    <string name="doze_pulse_duration_visible_summary"></string>
+
+    <string name="doze_pulse_duration_out_title">Затухание</string>
+    <string name="doze_pulse_duration_out_summary"></string>
+
+    <string name="doze_pulse_on_notifications_title">Активировать при уведомлении</string>
+    <string name="doze_pulse_on_notifications_summary">Активация датчика только на уведомлениях</string>
+
+    <string name="doze_shake_title">Параметры встряхивания</string>
+    <string name="doze_shake_mode_title">Режим встряхивания</string>
+    <string name="doze_shake_mode_summary">Используйте значение датчика встряхивания, чтобы вызвать активацию</string>
+    <string name="doze_shake_mode_test_summary">Вы хотите проверить датчик встряхивания?</string>
+    <string name="doze_shake_mode_test_result">Применить текущее значение?</string>
+    <string name="doze_shake_test">Встряхните свое устройство</string>
+    <string name="doze_shake_it">Встряхивание обнаружено!</string>
+
+    <string name="doze_shake_acc_threshold_title">Порог встряхивания</string>
+    <string name="doze_shake_acc_threshold_summary">Настройка силы встряхивания, необходимого для активации датчика</string>
+
+    <string name="doze_time_mode_title">Показывать часы и дату</string>
+    <string name="doze_time_mode_summary">Показывать время когда нет уведомлений</string>
+
+    <string name="twohundred_ms">200 мс</string>
+    <string name="fivehundred_ms">500 мс</string>
+    <string name="one_second">1 с</string>
+    <string name="one_second_default">1 с (по умолчанию)</string>
+    <string name="onehalf_second">1.5 с</string>
+    <string name="two_second">2 с</string>
+    <string name="twohalf_second">2.5 с</string>
+    <string name="three_second">3 с</string>
+    <string name="three_second_default">3 с (по умолчанию)</string>
+    <string name="threehalf_second">3.5 с</string>
+    <string name="four_second">4 с</string>
+    <string name="fourhalf_second">4.5 с</string>
+    <string name="five_second">5 с</string>
+
+    <string name="veryeasy_shake">Очень легкое</string>
+    <string name="easy_shake">Легкое</string>
+    <string name="medium_shake">По умолчанию</string>
+    <string name="hard_shake">Тяжелое</string>
+    <string name="veryhard_shake">Очень тяжелое</string>
+    <string name="strong_shake">Сильное</string>
+
+    <string name="fully_mode">Полный режим</string>
+    <string name="pocket_shake_mode">Карманный режим и встряхивание</string>
+    <string name="pocket_pulse_mode">Карманный режим и импульс</string>
+    <string name="pocket_only_mode">Карманный режим</string>
+    <string name="shake_pulse_mode">Встряхивание и импульс</string>
+    <string name="pulse_only_mode">Импульс (по умолчанию)</string>
 </resources>

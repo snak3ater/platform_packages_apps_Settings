@@ -2887,7 +2887,6 @@
 
     <!-- Power menu -->
     <string name="power_menu_title">Menú de encendido</string>
-    <string name="power_menu_power_title">Apagar</string>
     <string name="power_menu_reboot_title">Menú de reinicio</string>
     <string name="power_menu_screenshot_title">Captura de pantalla</string>
     <string name="power_menu_airplane_title">Modo avión</string>
@@ -3053,13 +3052,6 @@
     <string name="navigation_bar_arrow_keys_title">Mostrar las teclas de dirección mientras se escribe</string>
     <string name="navigation_bar_arrow_keys_summary">Mostrar los botones de cursor izquierdo y derecho mientras se escribe. Sobreescibe el selector de teclado.</string>
 
-    <!-- Doze options -->
-    <string name="doze_timeout_title">Tiempo de espera de pantalla ambiente</string>
-    <string name="doze_timeout_summary">Tiempo que la pantalla permanece encendida para la notificación</string>
-    <string name="doze_trigger_motion_title">Sensores de ambiente</string>
-    <string name="doze_trigger_motion_summary_on">La pantalla ambiente se mostrará al detectar un gesto de movimiento y notificaciones</string>
-    <string name="doze_trigger_motion_summary_off">El sensor de la pantalla ambiente se mostrará solo con las notificaciones</string>
-
     <!-- QuickSettings collapse panel -->
     <string name="quick_settings_collapse_title">Cerrar panel automáticamente</string>
     <string name="quick_settings_collapse_summary">Cerrar el panel de ajustes rápidos al pulsar</string>
@@ -3118,4 +3110,11 @@
     <!-- Keyboard and Input ASS methods -->
     <string name="show_enter_key_title">Mostrar tecla \'Enter\'</string>
     <string name="show_enter_key_summary">Forzar teclado a mostrar \'Enter\' en lugar de la tecla de emoticonos</string>
+
+    <!-- USB charging -->
+    <string name="usb_charging_title">Cargando</string>
+    <string name="usb_charging_summary">Permite desactivar todas las conexiones de dato y transferencia de archivos con el ordenador y deja el dispositivo únicamente en modo de carga</string>
+
+    <!-- Setting switch summary when device is in Charging mode -->
+    <string name="enable_adb_summary_charging">El dispositivo está en modo de carga, la depuración USB está desactivada</string>
 </resources>

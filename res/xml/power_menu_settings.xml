@@ -20,11 +20,6 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
     <SwitchPreference
-        android:key="power"
-        android:title="@string/power_menu_power_title"
-        android:defaultValue="true" />
-
-    <SwitchPreference
         android:key="reboot"
         android:title="@string/power_menu_reboot_title"
         android:defaultValue="true" />
@@ -42,7 +37,7 @@
     <SwitchPreference
         android:key="airplane"
         android:title="@string/power_menu_airplane_title"
-        android:defaultValue="true" />
+        android:defaultValue="false" />
 
     <SwitchPreference
         android:key="users"
@@ -67,7 +62,7 @@
     <SwitchPreference
         android:key="silent"
         android:title="@string/power_menu_sound_title"
-        android:defaultValue="true" />
+        android:defaultValue="false" />
 
     <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
         android:key="lockscreen_enable_power_menu"
