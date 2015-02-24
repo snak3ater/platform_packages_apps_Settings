@@ -3040,11 +3040,18 @@
     <string name="show_activity_indicators_summary">Voir les indicateurs dans les barres de signal</string>
     
     <!--Status bar date -->
-    <string name="status_bar_date_title">Style de la date</string>
+    <string name="status_bar_date_title">Date</string>
     <string name="status_bar_date_none">Cachée (par défaut)</string>
     <string name="status_bar_date_small">Petite</string>
     <string name="status_bar_date_normal">Normale</string>
     <string name="status_bar_date_format_title">Format de la date</string>
+    <string name="status_bar_date_style">Style de la date</string>
+    <string name="status_bar_date_style_normal">Normale</string>
+    <string name="status_bar_date_style_lowercase">Minuscule</string>
+    <string name="status_bar_date_style_uppercase">Majuscule</string>
+    <string name="status_bar_date_format_custom">Personnaliser le format</string>
+    <string name="status_bar_date_string_edittext_title">Doit être au format date eg. MM/dd/yy</string>
+    <string name="status_bar_date_string_edittext_summary">Entrer la chaîne</string>
 
     <!-- Nav bar customization -->
     <string name="navigation_bar_settings_title">Boutons et mise en page</string>
@@ -3186,4 +3193,14 @@
     <string name="pocket_only_mode">Poche</string>
     <string name="shake_pulse_mode">Secousse et vibration</string>
     <string name="pulse_only_mode">Vibration (par défaut)</string>
+    
+    <!-- Volume panel timeout -->
+    <string name="category_panel_time_out">Délai du panneau</string>
+    <string name="volume_panel_time_out_title">Délai du panneau de son</string>
+    <string name="volume_panel_time_out_summary">Masquer au bout de <xliff:g id="number">%d</xliff:g> secondes. Masquer automatiquement en touchant l\'extérieur</string>
+    <string name="volume_panel_time_out_3sec">3 secondes (default)</string>
+    <string name="volume_panel_time_out_5sec">5 secondes</string>
+    <string name="volume_panel_time_out_8sec">8 secondes</string>
+    <string name="volume_panel_time_out_12sec">12 secondes</string>
+    <string name="volume_panel_time_out_15sec">15 secondes</string>
 </resources>
