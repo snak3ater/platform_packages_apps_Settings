@@ -6627,6 +6627,9 @@
     <string name="simpleaosp_settings_title">Build Tweaks</string>
 
     <!-- Doze pulse (ambient display) options -->
+    <string name="ambient_disabled_notice">Enable ambient display</string>
+    <string name="summary_ambient_enabled">Ambient display is enabled</string>
+    <string name="summary_ambient_disabled">Ambient display is disabled</string>
     <string name="doze_overwrite_value_title">Overwrite value</string>
     <string name="doze_overwrite_value_summary">Allow to overwrite default value with user config</string>
 

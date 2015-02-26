@@ -21,6 +21,7 @@ import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.search.Indexable;
 
 import android.app.Activity;
+import android.app.ActionBar;
 import android.app.AlertDialog;
 import android.content.ContentResolver;
 import android.content.Context;
@@ -35,10 +36,24 @@ import android.preference.Preference.OnPreferenceClickListener;
 import android.preference.PreferenceScreen;
 import android.preference.PreferenceCategory;
 import android.preference.SwitchPreference;
+import android.preference.PreferenceActivity;
 import android.provider.SearchIndexableResource;
 import android.provider.Settings;
+import android.os.Handler;
+import android.net.Uri;
 import android.text.TextUtils;
 import android.widget.Button;
+
+import android.view.Gravity;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.BaseAdapter;
+import android.widget.ImageView;
+import android.widget.ListView;
+import android.widget.Switch;
+import android.widget.TextView;
 
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
@@ -53,7 +68,6 @@ public class AmbientSettings extends SettingsPreferenceFragment implements
         Indexable, ShakeSensorManager.ShakeListener {
     private static final String TAG = "AmbientSettings";
 
-    private static final String KEY_DOZE = "doze";
     private static final String KEY_DOZE_OVERWRITE_VALUE = "doze_overwrite_value";
     private static final String KEY_DOZE_PULSE_IN = "doze_pulse_in";
     private static final String KEY_DOZE_PULSE_VISIBLE = "doze_pulse_visible";
@@ -66,7 +80,6 @@ public class AmbientSettings extends SettingsPreferenceFragment implements
 
     private int mAccValue;
     private int mOldAccValue;
-    private SwitchPreference mDozePreference;
     private ListPreference mDozeListMode;
     private ListPreference mDozePulseIn;
     private ListPreference mDozePulseVisible;
@@ -77,15 +90,56 @@ public class AmbientSettings extends SettingsPreferenceFragment implements
     private AlertDialog mDialog;
     private Button mShakeFoundButton;
 
+    private Switch mActionBarSwitch;
+    private AmbientDisplayEnabler mAmbientEnabler;
+
+    private ViewGroup mPrefsContainer;
+    private View mDisabledText;
+
+    private ContentObserver mSettingsObserver = new ContentObserver(new Handler()) {
+        @Override
+        public void onChange(boolean selfChange, Uri uri) {
+            updateEnabledState();
+        }
+    };
+
+    @Override
+      public void onActivityCreated(Bundle icicle) {
+        // We don't call super.onActivityCreated() here, since it assumes we already set up
+        // Preference (probably in onCreate()), while ProfilesSettings exceptionally set it up in
+        // this method.
+        // On/off switch
+        Activity activity = getActivity();
+        //Switch
+        mActionBarSwitch = new Switch(activity);
+
+        if (activity instanceof PreferenceActivity) {
+            PreferenceActivity preferenceActivity = (PreferenceActivity) activity;
+            if (preferenceActivity.onIsHidingHeaders() || !preferenceActivity.onIsMultiPane()) {
+                final int padding = activity.getResources().getDimensionPixelSize(
+                        R.dimen.action_bar_switch_padding);
+                mActionBarSwitch.setPaddingRelative(0, 0, padding, 0);
+                activity.getActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM,
+                        ActionBar.DISPLAY_SHOW_CUSTOM);
+                activity.getActionBar().setCustomView(mActionBarSwitch, new ActionBar.LayoutParams(
+                        ActionBar.LayoutParams.WRAP_CONTENT,
+                        ActionBar.LayoutParams.WRAP_CONTENT,
+                        Gravity.CENTER_VERTICAL | Gravity.END));
+            }
+        }
+
+        mAmbientEnabler = new AmbientDisplayEnabler(activity, mActionBarSwitch);
+        // After confirming PreferenceScreen is available, we call super.
+          super.onActivityCreated(icicle);
+          setHasOptionsMenu(true);
+      }
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         final Activity activity = getActivity();
 
         addPreferencesFromResource(R.xml.ambient_settings);
-
-        mDozePreference = (SwitchPreference) findPreference(KEY_DOZE);
-        mDozePreference.setOnPreferenceChangeListener(this);
 
         mDozePulseIn = (ListPreference) findPreference(KEY_DOZE_PULSE_IN);
         mDozePulseIn.setOnPreferenceChangeListener(this);
@@ -361,9 +415,28 @@ public class AmbientSettings extends SettingsPreferenceFragment implements
     }
 
     @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+            Bundle savedInstanceState) {
+        View v = inflater.inflate(R.layout.ambient_fragment, container, false);
+        mPrefsContainer = (ViewGroup) v.findViewById(R.id.prefs_container);
+        mDisabledText = v.findViewById(R.id.disabled_text);
+
+        View prefs = super.onCreateView(inflater, mPrefsContainer, savedInstanceState);
+        mPrefsContainer.addView(prefs);
+
+        return v;
+    }
+
+    @Override
     public void onResume() {
         super.onResume();
-        updateState();
+	if (mAmbientEnabler != null) {
+            mAmbientEnabler.resume();
+        }
+        getContentResolver().registerContentObserver(
+                Settings.System.getUriFor(Settings.Secure.DOZE_ENABLED),
+                true, mSettingsObserver);
+        updateEnabledState();
         updateDozeOptions();
         updateDozeListMode();
     }
@@ -371,18 +444,21 @@ public class AmbientSettings extends SettingsPreferenceFragment implements
     @Override
     public void onPause() {
         super.onPause();
+	if (mAmbientEnabler != null) {
+            mAmbientEnabler.pause();
+        }
         mShakeSensorManager.disable();
         if (mDialog != null) {
             mDialog.dismiss();
         }
+	getContentResolver().unregisterContentObserver(mSettingsObserver);
     }
 
-    private void updateState() {
-        // Update doze if it is available.
-        if (mDozePreference != null) {
-            int value = Settings.Secure.getInt(getContentResolver(), Settings.Secure.DOZE_ENABLED, 1);
-            mDozePreference.setChecked(value != 0);
-        }
+	private void updateEnabledState() {
+        boolean enabled = Settings.System.getInt(getContentResolver(),
+                Settings.Secure.DOZE_ENABLED, 0) != 0;
+        mPrefsContainer.setVisibility(enabled ? View.VISIBLE : View.GONE);
+        mDisabledText.setVisibility(enabled ? View.GONE : View.VISIBLE);
     }
 
     @Override
@@ -396,10 +472,6 @@ public class AmbientSettings extends SettingsPreferenceFragment implements
     @Override
     public boolean onPreferenceChange(Preference preference, Object objValue) {
         final String key = preference.getKey();
-        if (preference == mDozePreference) {
-            boolean value = (Boolean) objValue;
-            Settings.Secure.putInt(getContentResolver(), Settings.Secure.DOZE_ENABLED, value ? 1 : 0);
-        }
         if (preference == mDozePulseIn) {
             int dozePulseIn = Integer.parseInt((String)objValue);
             int index = mDozePulseIn.findIndexOfValue((String) objValue);
@@ -462,7 +534,6 @@ public class AmbientSettings extends SettingsPreferenceFragment implements
                 public List<String> getNonIndexableKeys(Context context) {
                     ArrayList<String> result = new ArrayList<String>();
                     if (!isDozeAvailable(context)) {
-                        result.add(KEY_DOZE);
                         result.add(KEY_DOZE_LIST_MODE);
                         result.add(KEY_DOZE_TIME_MODE);
                         result.add(KEY_DOZE_OVERWRITE_VALUE);
