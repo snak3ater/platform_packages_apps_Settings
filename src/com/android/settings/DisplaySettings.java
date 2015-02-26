@@ -86,7 +86,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private static final String KEY_VOLUME_WAKE = "pref_volume_wake";
 
     private static final String KEY_DOZE_FRAGMENT = "doze_fragment";
-    private static final String KEY_AMBIENT_DISPLAY = "ambient_display";
 
     private static final int DLG_GLOBAL_CHANGE_WARNING = 1;
 
@@ -423,11 +422,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
                 Settings.System.getUriFor(Settings.System.ACCELEROMETER_ROTATION), true,
                 mAccelerometerRotationObserver);
         updateDisplayRotationPreferenceDescription();
-
-	boolean dozeEnabled = Settings.System.getInt(
-                getContentResolver(), Settings.Secure.DOZE_ENABLED, 0) == 1;
-        mDozeFragement.setSummary(dozeEnabled
-                ? R.string.summary_ambient_enabled : R.string.summary_ambient_disabled);
     }
 
     @Override
