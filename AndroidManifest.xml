@@ -1828,7 +1828,7 @@
                 android:resource="@id/display_settings" />
         </activity>
 
-	<!-- Pseudo-activity used to provide an intent-filter entry point to Rotation settings -->
+	<!-- Pseudo-activity used to provide an intent-filter entry point to Battery icon settings -->
 	<activity android:name="Settings$BatterySettingsActivity"
 		android:label="@string/status_bar_battery_title"
 		android:taskAffinity=""
