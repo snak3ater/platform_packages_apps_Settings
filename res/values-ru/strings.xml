@@ -2956,7 +2956,7 @@
     <!-- frame rates -->
     <string name="screen_recorder_bitrate_title_100000">100 КБ/с</string>
     <string name="screen_recorder_bitrate_title_250000">250 КБ/с</string>
-    <string name="screen_recorder_bitrate_title_500000">500 kB/с</string>
+    <string name="screen_recorder_bitrate_title_500000">500 КБ/с</string>
     <string name="screen_recorder_bitrate_title_1000000">1 МБ/с</string>
     <string name="screen_recorder_bitrate_title_2000000">2 МБ/с</string>
     <string name="screen_recorder_bitrate_title_3000000">3 МБ/с</string>
@@ -2995,7 +2995,7 @@
     <string name="ring_notification_volume_option_tile">Громкость рингтона и уведомлений</string>
    
     <!-- Long press on lock screen lock icon to sleep -->
-    <string name="longpress_lock_icon_to_sleep_title">Длительное нажатие по иконке</string>
+    <string name="longpress_lock_icon_to_sleep_title">Длительное нажатие по иконке замка блокирует экран</string>
     <string name="longpress_lock_icon_to_sleep_summary">Эта опция не будет работать, если Smart Lock и ограниченные возможности включены</string>   
 
     <!-- Volume pane timeout -->
