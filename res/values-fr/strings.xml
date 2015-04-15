@@ -2785,6 +2785,7 @@
     <string name="weather_clock_title">Météo dans la barre de statut</string>
 
     <!-- Saosp Settings menus -->
+    <string name="header_category_simpleaosp">Personnalisation</string>
     <string name="simpleaosp_settings_title">Réglages SimpleAOSP</string>
     <string name="keywords_simpleaosp">SimpleAOSP</string>
 
@@ -3007,4 +3008,7 @@
     <string name="volume_panel_time_out_8sec">8 secondes</string>
     <string name="volume_panel_time_out_12sec">12 secondes</string>
     <string name="volume_panel_time_out_15sec">15 secondes</string>
+    
+    <string name="double_tap_sleep_nav_bar_title">Taper deux fois pour mettre en veille</string>
+    <string name="double_tap_sleep_nav_bar_summary">Taper deux fois dans la barre de navigation pour mettre l\'appareil en veille</string>
 </resources>
