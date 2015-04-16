@@ -3009,6 +3009,10 @@
     <string name="volume_panel_time_out_12sec">12 secondes</string>
     <string name="volume_panel_time_out_15sec">15 secondes</string>
     
+    <!-- Show/Hide Search Bar -->
+    <string name="recents_show_searchbar">Visibilité de la barre de recherche</string>
+    <string name="recents_show_searchbar_summary">Désactiver la barre de recherche dans le menu récents</string>
+
     <string name="double_tap_sleep_nav_bar_title">Taper deux fois pour mettre en veille</string>
     <string name="double_tap_sleep_nav_bar_summary">Taper deux fois dans la barre de navigation pour mettre l\'appareil en veille</string>
 </resources>
